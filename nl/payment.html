@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Betaling - Francisca & Magdalena">
+  <title>Betaling - Francisca & Magdalena</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <a href="index.html" class="active" title="Nederlands">NL</a>
+    <a href="../en/payment.html" title="English">EN</a>
+    <a href="../pl/payment.html" title="Polski">PL</a>
+  </div>
+  
+  <!-- Payment Section -->
+  <section class="section-lg payment-section">
+    <div class="container">
+      <div class="payment-card fade-in">
+        
+        <h2>Hartelijk dank!</h2>
+        
+        <p>
+          Wat lief dat jullie willen bijdragen aan één van onze dromen. 
+          Jullie steun en liefde betekenen ontzettend veel voor ons.
+        </p>
+        
+        <div class="divider"></div>
+        
+        <h3 style="color: var(--color-brown); margin-bottom: 1rem;">Hoe werkt het?</h3>
+        
+        <p style="margin-bottom: 2rem;">
+          Jullie kunnen een bedrag overmaken dat voor jullie goed voelt. 
+          Er is geen minimum of maximum - elke bijdrage is welkom en wordt enorm gewaardeerd.
+        </p>
+        
+        <!-- Payment Options -->
+        <div class="payment-options">
+          
+          <!-- Option 1: Payment Link Button -->
+          <div style="margin-bottom: 2rem;">
+            <h4 style="color: var(--color-dark-brown); margin-bottom: 1rem; font-size: 1.1rem;">
+              Via betaalverzoek
+            </h4>
+            
+            <!-- ========================================
+                 PASTE YOUR ING/TIKKIE PAYMENT LINK HERE
+                 ========================================
+                 
+                 Instructions:
+                 1. Create a payment request in ING/Tikkie app
+                 2. Copy the payment link
+                 3. Replace the "#" in href below with your link
+                 
+                 Example:
+                 <a href="https://tikkie.me/pay/your-unique-code" 
+                    class="btn btn-primary btn-large" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                   Open betaalverzoek
+                 </a>
+            -->
+            
+            <a href="#" 
+               class="btn btn-primary btn-large" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               id="paymentLink">
+              Open betaalverzoek
+            </a>
+            
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 1rem;">
+              Klik op de knop om het betaalverzoek te openen. 
+              Jullie kunnen daar zelf een bedrag invullen.
+            </p>
+          </div>
+          
+          <div class="divider"></div>
+          
+          <!-- Option 2: QR Code -->
+          <div style="margin-bottom: 2rem;">
+            <h4 style="color: var(--color-dark-brown); margin-bottom: 1rem; font-size: 1.1rem;">
+              Scan de QR-code
+            </h4>
+            
+            <div class="qr-code">
+              <!-- ========================================
+                   PASTE YOUR QR CODE IMAGE HERE
+                   ========================================
+                   
+                   Instructions:
+                   1. Generate a QR code from your payment link (via ING/Tikkie app or QR generator)
+                   2. Save the QR image to the assets/ folder
+                   3. Uncomment the <img> tag below and update the src path
+                   
+                   Example:
+                   <img src="assets/payment-qr.png" alt="Scan om te betalen">
+              -->
+              
+              <!-- TEMPORARY PLACEHOLDER - Remove when you add your QR code -->
+              <div style="background: white; padding: 2rem; border-radius: 8px; border: 2px dashed var(--color-beige);">
+                <p style="color: var(--color-text-light); margin: 0; font-size: 0.9rem;">
+                  📱 QR-code komt hier
+                </p>
+              </div>
+              
+              <!-- Uncomment and update when you have your QR code:
+              <img src="assets/payment-qr.png" alt="Scan om te betalen" style="width: 100%; height: auto;">
+              -->
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 1rem;">
+              Scan deze code met jullie telefoon om direct te betalen.
+            </p>
+          </div>
+          
+          <div class="divider"></div>
+          
+          <!-- Option 3: Manual Transfer Info -->
+          <div style="margin-bottom: 2rem;">
+            <h4 style="color: var(--color-dark-brown); margin-bottom: 1rem; font-size: 1.1rem;">
+              Handmatig overmaken
+            </h4>
+            
+            <div class="payment-info">
+              <!-- ========================================
+                   UPDATE YOUR BANK DETAILS HERE (OPTIONAL)
+                   ========================================
+              -->
+              <p style="margin-bottom: 0.5rem;">
+                <strong>Rekeningnummer:</strong> NL00 INGB 0000 0000 00
+              </p>
+              <p style="margin-bottom: 0.5rem;">
+                <strong>Ten name van:</strong> Francisca & Magdalena
+              </p>
+              <p style="margin: 0;">
+                <strong>Omschrijving:</strong> Cadeau bruiloft + jullie naam
+              </p>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 1rem;">
+              Voeg jullie naam toe aan de omschrijving, 
+              zodat we jullie later persoonlijk kunnen bedanken.
+            </p>
+          </div>
+          
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- After Payment -->
+        <div style="margin-top: 2rem;">
+          <p style="font-size: 0.95rem; color: var(--color-text);">
+            Na jullie bijdrage, of als jullie later willen terugkeren:
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+            <a href="thank-you.html" class="btn btn-primary">Naar de bedankpagina</a>
+            <a href="index.html" class="btn btn-secondary">Terug naar home</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Met heel veel liefde <span class="footer-heart">♥</span> Francisca & Magdalena</p>
+    </div>
+  </footer>
+  
+  <script src="../js/script.js"></script>
+  
+  <!-- Optional: Check if payment link is configured -->
+  <script>
+    // Simple check to remind you to add payment link
+    document.addEventListener('DOMContentLoaded', function() {
+      const paymentLink = document.getElementById('paymentLink');
+      if (paymentLink && paymentLink.getAttribute('href') === '#') {
+        console.warn('⚠️ Reminder: Update the payment link in payment.html');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Payment - Francisca & Magdalena">
+  <title>Payment - Francisca & Magdalena</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  
+  <div class="language-switcher">
+    <a href="../nl/payment.html" title="Nederlands">NL</a>
+    <a href="payment.html" class="active" title="English">EN</a>
+    <a href="../pl/payment.html" title="Polski">PL</a>
+  </div>
+  
+  <section class="section-lg payment-section">
+    <div class="container">
+      <div class="payment-card fade-in">
+        
+        <h2>Thank you so much!</h2>
+        
+        <p>
+          How sweet of you to want to contribute to one of our dreams. 
+          Your support and love mean so much to us.
+        </p>
+        
+        <div class="divider"></div>
+        
+        <h3 style="color: var(--color-brown); margin-bottom: 1rem;">How does it work?</h3>
+        
+        <p style="margin-bottom: 2rem;">
+          You can transfer an amount that feels right for you. 
+          There is no minimum or maximum - every contribution is welcome and greatly appreciated.
+        </p>
+        
+        <div class="payment-options">
+          
+          <div style="margin-bottom: 2rem;">
+            <h4 style="color: var(--color-dark-brown); margin-bottom: 1rem; font-size: 1.1rem;">
+              Via payment request
+            </h4>
+            
+            <!-- PASTE YOUR ING/TIKKIE PAYMENT LINK HERE -->
+            <a href="#" 
+               class="btn btn-primary btn-large" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               id="paymentLink">
+              Open payment request
+            </a>
+            
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 1rem;">
+              Click the button to open the payment request. 
+              You can enter an amount yourself.
+            </p>
+          </div>
+          
+          <div class="divider"></div>
+          
+          <div style="margin-bottom: 2rem;">
+            <h4 style="color: var(--color-dark-brown); margin-bottom: 1rem; font-size: 1.1rem;">
+              Scan the QR code
+            </h4>
+            
+            <div class="qr-code">
+              <!-- PASTE YOUR QR CODE IMAGE HERE -->
+              <div style="background: white; padding: 2rem; border-radius: 8px; border: 2px dashed var(--color-beige);">
+                <p style="color: var(--color-text-light); margin: 0; font-size: 0.9rem;">
+                  📱 QR code goes here
+                </p>
+              </div>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 1rem;">
+              Scan this code with your phone to pay directly.
+            </p>
+          </div>
+          
+          <div class="divider"></div>
+          
+          <div style="margin-bottom: 2rem;">
+            <h4 style="color: var(--color-dark-brown); margin-bottom: 1rem; font-size: 1.1rem;">
+              Manual transfer
+            </h4>
+            
+            <div class="payment-info">
+              <p style="margin-bottom: 0.5rem;">
+                <strong>Account number:</strong> NL00 INGB 0000 0000 00
+              </p>
+              <p style="margin-bottom: 0.5rem;">
+                <strong>Account holder:</strong> Francisca & Magdalena
+              </p>
+              <p style="margin: 0;">
+                <strong>Description:</strong> Wedding gift + your name
+              </p>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 1rem;">
+              Add your name to the description, 
+              so we can personally thank you later.
+            </p>
+          </div>
+          
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div style="margin-top: 2rem;">
+          <p style="font-size: 0.95rem; color: var(--color-text);">
+            After your contribution, or if you want to return later:
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+            <a href="thank-you.html" class="btn btn-primary">To the thank you page</a>
+            <a href="index.html" class="btn btn-secondary">Back to home</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="container">
+      <p>With all our love <span class="footer-heart">♥</span> Francisca & Magdalena</p>
+    </div>
+  </footer>
+  
+  <script src="../js/script.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const paymentLink = document.getElementById('paymentLink');
+      if (paymentLink && paymentLink.getAttribute('href') === '#') {
+        console.warn('⚠️ Reminder: Update the payment link in payment-en.html');
+      }
+    });
+  </script>
+</body>
+</html>
