@@ -386,13 +386,13 @@ a:hover {
   line-height: 1.5;
 }
 
-.btn-primary {
+.btn-primary, .info-card .btn-primary {
   background: linear-gradient(135deg, var(--color-muted-gold) 0%, var(--color-gold) 100%);
   color: white;
   box-shadow: var(--shadow-sm);
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .info-card .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   color: white;
@@ -442,6 +442,17 @@ a:hover {
   background-position: center;
   opacity: 0.2;
   z-index: 0;
+}
+.dream-hero.house::before {
+  background-image: url('../images/huis.webp');
+}
+.dream-hero.baby::before {
+  background-image: url('../images/mini-magda-frania.png');
+  background-position: top;
+}
+.dream-hero.wedding::before {
+  background-image: url('../images/married.png');
+  background-position: top;
 }
 
 .dream-hero-content {
@@ -512,7 +523,11 @@ a:hover {
 .form-embed iframe {
   width: 100%;
   border: none;
-  min-height: 600px;
+}
+
+.form-embed .ijGHPr {
+  display: none !important;
+  opacity: 0 !important;
 }
 
 /* ============================================
@@ -618,6 +633,82 @@ a:hover {
 }
 
 /* ============================================
+   Practical Information Page
+   ============================================ */
+
+.info-card {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.info-card h3 {
+  color: var(--color-brown);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+}
+
+.info-card p {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.8;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0;
+}
+
+.info-card ul li {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-beige);
+  line-height: 1.8;
+}
+
+.info-card ul li:last-child {
+  border-bottom: none;
+}
+
+.info-card a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.info-card a:hover {
+  color: var(--color-muted-gold);
+  text-decoration: underline;
+}
+
+.two-column-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+.two-third-column-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.program-placeholder {
+  background: var(--color-beige-light);
+  padding: 3rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+/* Additional color variable for beige-light */
+:root {
+  --color-beige-light: #F5F0E8;
+}
+
+/* ============================================
    Footer
    ============================================ */
 
@@ -632,6 +723,11 @@ a:hover {
   color: var(--color-brown);
   font-size: 0.9rem;
   margin: 0;
+}
+
+.footer .quote {
+  max-width: 100%;
+  height: auto;
 }
 
 .footer-heart {
@@ -659,6 +755,11 @@ a:hover {
   }
   
   .dream-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .two-column-grid, .two-third-column-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
@@ -698,7 +799,8 @@ a:hover {
   .card,
   .dream-description,
   .form-container,
-  .payment-card {
+  .payment-card,
+  .info-card {
     padding: var(--spacing-md);
   }
 }
