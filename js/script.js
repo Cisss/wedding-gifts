@@ -58,6 +58,18 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
+    // Scroll to bottom when clicking a link that targets the footer
+    navLinks.querySelectorAll('.nav-link[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const targetId = link.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target && target.tagName.toLowerCase() === 'footer') {
+          e.preventDefault();
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+      });
+    });
+
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.main-nav')) {
