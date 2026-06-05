@@ -16,12 +16,25 @@
 </head>
 <body>
   
-  <!-- Language Switcher -->
-  <div class="language-switcher">
-    <a href="../nl/index.html" title="Nederlands">NL</a>
-    <a href="../en/index.html" title="English">EN</a>
-    <a href="index.html" class="active" title="Polski">PL</a>
-  </div>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="gifts.html" class="nav-link">Prezenty Ślubne</a>
+        <a href="#praktyczne-info" class="nav-link">Informacje Praktyczne</a>
+        <a href="#preferencje" class="nav-link">Wasze Preferencje</a>
+        <a href="#program" class="nav-link">Program i Lokalizacje</a>
+      </div>
+      <div class="language-switcher">
+        <a href="../nl/index.html" title="Nederlands">NL</a>
+        <a href="../en/index.html" title="English">EN</a>
+        <a href="index.html" class="active" title="Polski">PL</a>
+      </div>
+    </div>
+  </nav>
   
   <!-- Hero Section -->
   <section class="hero">
@@ -57,7 +70,7 @@
   </section>
   
 <!-- Practical Information -->
-  <section class="section-lg">
+  <section id="praktyczne-info" class="section-lg">
     <div class="container">
       <h2 class="text-center mb-lg">Informacje Praktyczne</h2>
       <div class="info-card">
@@ -88,16 +101,27 @@
     </div>
     </div>
   </section>
-  
-  
+
+  <!-- Preferences -->
+   <section id="preferencje">
+    <div class="container">
+      <h2 class="text-center mb-lg">Wasze Preferencje</h2>
+      <div class="info-card">
+        <h3>Dać nam znać</h3>
+        <iframe data-tally-src="https://tally.so/embed/dWzdEd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Laat het ons weten"></iframe>
+        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+      </div>
+    </div>
+  </section>
+
   <!-- Program -->
-  <section>
+  <section id="program">
     <div class="container">
       
       <h2 class="text-center mb-lg">Program</h2>
       <div class="info-card text-center">
-        <a href="../images/program.png" download="magda-frania-program-Ślubu.png">
-          <img src="../images/program.png" alt="Program Ślubu" style="max-width: 100%; height: auto;">
+        <a href="../images/program-pl.png" download="magda-frania-program-Ślubu.png">
+          <img src="../images/program-pl.png" alt="Program Ślubu" style="max-width: 100%; height: auto;">
         </a>
       </div>
         <div class="two-column-grid">

@@ -40,7 +40,89 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCountdown();
     setInterval(updateCountdown, 1000);
   }
-  
+
+  // Hamburger menu toggle
+  const hamburger = document.querySelector('.nav-hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function() {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.main-nav')) {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Transparent nav: become opaque after scrolling past hero
+  const mainNav = document.querySelector('.main-nav');
+  if (mainNav) {
+    const onScroll = function() {
+      if (window.scrollY > 20) {
+        mainNav.classList.add('scrolled');
+      } else {
+        mainNav.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run on load in case page is already scrolled
+  }
+
+  // Active nav link highlighting
+  const allNavLinks = document.querySelectorAll('.nav-links .nav-link');
+
+  // 1. Mark the current page link active based on URL (skip anchor-only links)
+  const currentPath = window.location.pathname;
+  allNavLinks.forEach(function(link) {
+    const href = link.getAttribute('href');
+    // Only check non-anchor links (i.e. not "#section" or "page.html#section")
+    if (href && !href.includes('#')) {
+      const linkPath = new URL(link.href, window.location.href).pathname;
+      if (linkPath === currentPath) {
+        link.classList.add('active');
+      }
+    }
+  });
+
+  // 2. On index pages: highlight section links as user scrolls
+  const sections = document.querySelectorAll('section[id]');
+  if (sections.length > 0) {
+    const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 64;
+
+    const sectionObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          allNavLinks.forEach(function(link) {
+            const href = link.getAttribute('href');
+            // Match both "#id" and "index.html#id" patterns
+            const isMatch = href === '#' + id || href.endsWith('#' + id);
+            link.classList.toggle('active', isMatch);
+          });
+        }
+      });
+    }, {
+      rootMargin: '-' + navHeight + 'px 0px -60% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(function(section) {
+      sectionObserver.observe(section);
+    });
+  }
   // Add fade-in animation on scroll (optional enhancement)
   const observerOptions = {
     threshold: 0.1,
